@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Placeholder: definir colores del diseño -->
+    <color name="primary">#6B4E9E</color>
+    <color name="primary_dark">#4A3570</color>
+    <color name="accent">#E6A23C</color>
+    <color name="text_primary">#4A3570</color>
+    <color name="text_subtitle">#4A3570</color>
+    <color name="text_accent">#C4902C</color>
+    <color name="white">#FFFFFF</color>
 </resources>

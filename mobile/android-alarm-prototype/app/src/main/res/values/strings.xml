@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Alarm Prototype</string>
+    <string name="bienvenida_titulo">Alarmas</string>
+    <string name="bienvenida_descripcion_linea1">QUE PIENSAN</string>
+    <string name="bienvenida_descripcion_linea2">POR TI</string>
+    <string name="bienvenida_btn_iniciar_sesion">Iniciar sesión</string>
+    <string name="bienvenida_btn_crear_cuenta">Crear cuenta</string>
 </resources>

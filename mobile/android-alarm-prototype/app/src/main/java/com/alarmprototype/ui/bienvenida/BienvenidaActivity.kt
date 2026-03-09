@@ -2,6 +2,7 @@ package com.alarmprototype.ui.bienvenida
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.alarmprototype.R
 
 /**
  * Pantalla de bienvenida.
@@ -11,6 +12,6 @@ class BienvenidaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // setContentView(R.layout.activity_bienvenida)
+        setContentView(R.layout.activity_bienvenida)
     }
 }
