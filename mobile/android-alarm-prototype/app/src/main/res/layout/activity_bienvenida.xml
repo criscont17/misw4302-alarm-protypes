@@ -4,95 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:paddingHorizontal="32dp"
+    android:background="@color/screen_background"
     tools:context=".ui.bienvenida.BienvenidaActivity">
 
+    <!-- Logo - backgrounds.png: 402×352, top 63px, opacity 0.05 -->
+    <ImageView
+        android:id="@+id/imgLogoBackground"
+        android:layout_width="0dp"
+        android:layout_height="352dp"
+        android:alpha="0.05"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/backgrounds"
+        android:layout_marginTop="63dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Logo: 402×402, top 89px, left -9px. Adaptable: ancho = min(402, parent), ratio 1:1 -->
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/app_name"
+        android:layout_marginStart="-9dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="9dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/logo_app"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@id/btnIniciarSesion"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintWidth_max="402dp" />
 
-    <TextView
-        android:id="@+id/txtTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/bienvenida_titulo"
-        android:textColor="@color/text_primary"
-        android:textSize="42sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@id/txtDescripcionLinea1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgLogo"
-        tools:text="Alarmas" />
-
-    <TextView
-        android:id="@+id/txtDescripcionLinea1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:letterSpacing="0.15"
-        android:text="@string/bienvenida_descripcion_linea1"
-        android:textColor="@color/text_primary"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTitulo"
-        tools:text="QUE PIENSAN" />
-
-    <View
-        android:id="@+id/viewLinea1"
+    <!-- Botones - backgrounds.png: 402×352, top 463px, opacity 0.05. Adaptable: detrás del grupo de botones, 28dp por encima del primer botón -->
+    <ImageView
+        android:id="@+id/imgBackgroundBotones"
         android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="6dp"
-        android:background="@drawable/dashed_line"
+        android:layout_height="0dp"
+        android:alpha="0.05"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/backgrounds"
+        app:layout_constraintBottom_toBottomOf="@id/btnCrearCuenta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtDescripcionLinea1" />
+        app:layout_constraintTop_toTopOf="@id/btnIniciarSesion"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginTop="-28dp" />
 
-    <TextView
-        android:id="@+id/txtDescripcionLinea2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:letterSpacing="0.15"
-        android:text="@string/bienvenida_descripcion_linea2"
-        android:textColor="@color/text_accent"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewLinea1"
-        tools:text="POR TI" />
-
-    <View
-        android:id="@+id/viewLinea2"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="6dp"
-        android:background="@drawable/dashed_line_accent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtDescripcionLinea2" />
-
+    <!-- Botón Iniciar Sesión: 238×96, top 491px, left 85px. Adaptable: márgenes 85/79 dp -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnIniciarSesion"
         android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="48dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="79dp"
         android:backgroundTint="@color/primary"
+        android:elevation="4dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
+        android:stateListAnimator="@null"
         android:text="@string/bienvenida_btn_iniciar_sesion"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -100,17 +76,22 @@
         app:layout_constraintBottom_toTopOf="@id/btnCrearCuenta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewLinea2" />
+        app:layout_constraintTop_toBottomOf="@id/imgLogo" />
 
+    <!-- Botón Crear Cuenta: 233×96, top 613px, left 87px. Adaptable: márgenes 87/82 dp, separación 26dp -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCrearCuenta"
         android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="40dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/primary"
+        android:elevation="4dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
+        android:stateListAnimator="@null"
         android:text="@string/bienvenida_btn_crear_cuenta"
         android:textColor="@color/white"
         android:textSize="16sp"
