@@ -6,4 +6,13 @@
     <string name="bienvenida_descripcion_linea2">POR TI</string>
     <string name="bienvenida_btn_iniciar_sesion">Iniciar sesión</string>
     <string name="bienvenida_btn_crear_cuenta">Crear cuenta</string>
+    <string name="crear_cuenta_titulo">Crear cuenta</string>
+    <string name="crear_cuenta_btn_volver">Volver</string>
+    <string name="crear_cuenta_label_usuario">Usuario</string>
+    <string name="crear_cuenta_hint_usuario">Ingresa tu usuario</string>
+    <string name="crear_cuenta_label_correo">Correo</string>
+    <string name="crear_cuenta_hint_correo">Ingresa tu correo</string>
+    <string name="crear_cuenta_label_contrasena">Contraseña</string>
+    <string name="crear_cuenta_hint_contrasena">Ingresa tu contraseña</string>
+    <string name="crear_cuenta_btn_text">Crear cuenta</string>
 </resources>

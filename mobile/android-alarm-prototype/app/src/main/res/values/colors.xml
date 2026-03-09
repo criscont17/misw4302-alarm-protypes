@@ -8,4 +8,7 @@
     <color name="text_accent">#C4902C</color>
     <color name="white">#FFFFFF</color>
     <color name="screen_background">#FFFBFE</color>
+    <color name="input_background">#E7E0EC</color>
+    <color name="input_stroke">#938D99</color>
+    <color name="text_secondary">#79747E</color>
 </resources>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background"
+    tools:context=".ui.crearcuenta.CrearCuentaActivity">
+
+    <ImageView
+        android:id="@+id/imgBackgroundSuperior"
+        android:layout_width="0dp"
+        android:layout_height="352dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/backgrounds"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgBackgroundBotones"
+        android:layout_width="0dp"
+        android:layout_height="352dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/backgrounds"
+        android:layout_marginTop="-215dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnCrearCuenta" />
+
+    <ImageButton
+        android:id="@+id/btnVolver"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/crear_cuenta_btn_volver"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_primary" />
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/crear_cuenta_titulo"
+        android:textColor="@color/text_primary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnVolver" />
+
+    <FrameLayout
+        android:id="@+id/containerUsuario"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/bg_text_field_with_shadow"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitulo">
+
+        <EditText
+            android:id="@+id/etUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/crear_cuenta_hint_usuario"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/lblUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_label_overlap"
+        android:elevation="3dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="@string/crear_cuenta_label_usuario"
+        android:textColor="@color/text_primary"
+        android:textSize="12sp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toTopOf="@id/containerUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="-10dp" />
+
+    <FrameLayout
+        android:id="@+id/containerCorreo"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/bg_text_field_with_shadow"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerUsuario">
+
+        <EditText
+            android:id="@+id/etCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/crear_cuenta_hint_correo"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/lblCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_label_overlap"
+        android:elevation="3dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="@string/crear_cuenta_label_correo"
+        android:textColor="@color/text_primary"
+        android:textSize="12sp"
+        android:layout_marginStart="19dp"
+        app:layout_constraintBottom_toTopOf="@id/containerCorreo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="-10dp" />
+
+    <FrameLayout
+        android:id="@+id/containerContrasena"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/bg_text_field_with_shadow"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerCorreo">
+
+        <EditText
+            android:id="@+id/etContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/crear_cuenta_hint_contrasena"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/lblContrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_label_overlap"
+        android:elevation="3dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="@string/crear_cuenta_label_contrasena"
+        android:textColor="@color/text_primary"
+        android:textSize="12sp"
+        android:layout_marginStart="19dp"
+        app:layout_constraintBottom_toTopOf="@id/containerContrasena"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="-10dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/primary"
+        android:elevation="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/crear_cuenta_btn_text"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerContrasena" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
