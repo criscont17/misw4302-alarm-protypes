@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +8,10 @@
     android:background="@color/screen_background"
     tools:context=".ui.bienvenida.BienvenidaActivity">
 
-    <!-- Logo - backgrounds.png: 402×352, top 63px, opacity 0.05 -->
     <ImageView
         android:id="@+id/imgLogoBackground"
         android:layout_width="0dp"
         android:layout_height="352dp"
-        android:alpha="0.05"
         android:contentDescription="@null"
         android:scaleType="fitCenter"
         android:src="@drawable/backgrounds"
@@ -21,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Logo: 402×402, top 89px, left -9px. Adaptable: ancho = min(402, parent), ratio 1:1 -->
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="0dp"
@@ -40,12 +38,10 @@
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintWidth_max="402dp" />
 
-    <!-- Botones - backgrounds.png: 402×352, top 463px, opacity 0.05. Adaptable: detrás del grupo de botones, 28dp por encima del primer botón -->
     <ImageView
         android:id="@+id/imgBackgroundBotones"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:alpha="0.05"
+        android:layout_height="300dp"
         android:contentDescription="@null"
         android:scaleType="fitCenter"
         android:src="@drawable/backgrounds"
@@ -56,7 +52,6 @@
         app:layout_constraintVertical_bias="0"
         android:layout_marginTop="-28dp" />
 
-    <!-- Botón Iniciar Sesión: 238×96, top 491px, left 85px. Adaptable: márgenes 85/79 dp -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnIniciarSesion"
         android:layout_width="0dp"
@@ -78,7 +73,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgLogo" />
 
-    <!-- Botón Crear Cuenta: 233×96, top 613px, left 87px. Adaptable: márgenes 87/82 dp, separación 26dp -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCrearCuenta"
         android:layout_width="0dp"
