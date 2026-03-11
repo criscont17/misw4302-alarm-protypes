@@ -17,8 +17,5 @@ class CrearCuentaActivity : AppCompatActivity() {
         findViewById<android.widget.ImageButton>(R.id.btnVolver).setOnClickListener {
             finish()
         }
-        findViewById<com.google.android.material.button.MaterialButton>(R.id.btnCrearCuenta).setOnClickListener {
-            startActivity(Intent(this, IniciarSesionActivity::class.java))
-        }
     }
 }

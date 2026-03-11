@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Alarm Prototype</string>
-    <string name="bienvenida_titulo">Alarmas</string>
-    <string name="bienvenida_descripcion_linea1">QUE PIENSAN</string>
-    <string name="bienvenida_descripcion_linea2">POR TI</string>
+    <string name="app_name">Alarma Prototipo</string>
     <string name="bienvenida_btn_iniciar_sesion">Iniciar sesión</string>
     <string name="bienvenida_btn_crear_cuenta">Crear cuenta</string>
     <string name="crear_cuenta_titulo">Crear cuenta</string>
@@ -15,4 +12,14 @@
     <string name="crear_cuenta_label_contrasena">Contraseña</string>
     <string name="crear_cuenta_hint_contrasena">Ingresa tu contraseña</string>
     <string name="crear_cuenta_btn_text">Crear cuenta</string>
+    <string name="iniciar_sesion_titulo">Iniciar sesión</string>
+    <string name="iniciar_sesion_btn_volver">Volver</string>
+    <string name="iniciar_sesion_label_usuario">Usuario</string>
+    <string name="iniciar_sesion_hint_usuario">Ingresa tu usuario</string>
+    <string name="iniciar_sesion_label_correo">Correo</string>
+    <string name="iniciar_sesion_hint_correo">Ingresa tu correo</string>
+    <string name="iniciar_sesion_label_contrasena">Contraseña</string>
+    <string name="iniciar_sesion_hint_contrasena">Ingresa tu contraseña</string>
+    <string name="iniciar_sesion_btn_text">Iniciar sesión</string>
+
 </resources>
