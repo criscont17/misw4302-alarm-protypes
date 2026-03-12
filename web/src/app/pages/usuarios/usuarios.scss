@@ -1,110 +1,271 @@
-// Pantalla Usuarios – layout sidebar + contenido, tokens como login (#21005D, #E7E0EC, sombras)
 
-.usuarios-layout {
+.dashboard-layout {
   display: flex;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.dashboard-main {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+  background: #fff;
+  min-width: 0;
+  min-height: 0; 
+}
+
+/* Fondos duplicados */
+.dashboard-main__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;              /* cada fondo ocupa la mitad */
+  background-image: url('../../assets/shared/background-web.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.dashboard-main__bg-left {
+  left: 0;                 /* fondo izquierdo */
+}
+
+.dashboard-main__bg-right {
+  right: 0;                /* fondo derecho */
+}
+
+.dashboard-main__header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+
+  /* ===== NUEVO – Header con iconos a izquierda/derecha y título debajo ===== */
+  display: flex;
+  flex-direction: column;  /* columna: fila de iconos arriba, título debajo */
+  gap: 0.5rem;
+  align-items: flex-start; /* asegura alineación izquierda */
+}
+
+/* Fila de iconos dentro del header */
+.dashboard-main__header-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* usuario a la izquierda, campana+engranaje derecha */
   width: 100%;
 }
 
-.usuarios-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 1.5rem;
-  background: #fff;
-  min-width: 0;
-}
-
-.usuarios-main__header {
+.header-icons-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
+  gap: 1rem; /* espacio entre campana y engranaje */
 }
 
-.usuarios-main__title {
+.dashboard-main__header-icons img {
+  display: block;
+  opacity: 0.9;
+}
+
+/* Título del dashboard */
+.dashboard-main__title {
   font-family: Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 28px;
+  font-weight: bold;
+  font-size: 30px;
   line-height: 1.25;
-  color: #21005d;
-  margin: 0;
+  color: #21005D;
+  margin-bottom: 1rem;
+  text-align: left;  /* fuerza alineación izquierda */
+  width: 100%;       /* ocupa todo el ancho del contenedor */
 }
 
-.usuarios-main__icons {
+/* ===== Iconos generales (mantener estilos existentes) ===== */
+.dashboard-main__icons {
   display: flex;
   align-items: center;
   gap: 1rem;
-
-  img {
-    display: block;
-    opacity: 0.9;
-  }
 }
 
-.usuarios-main__content {
+.dashboard-main__icons img {
+  display: block;
+  opacity: 0.9;
+}
+
+.dashboard-main__content {
+  position: relative;
+  z-index: 1;
   flex: 1;
-  overflow-x: auto;
-}
+  overflow-y: auto;
 
-.usuarios-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  box-shadow: 0 4px 4px 0 #00000040;
-  border-radius: 4px;
-  overflow: hidden;
-
-  th,
-  td {
-    padding: 0.75rem 1rem;
-    border: 1px solid rgba(33, 0, 93, 0.2);
-    text-align: left;
-  }
-
-  th {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: #21005d;
-    background-color: rgba(231, 224, 236, 0.5);
-  }
-
-  td {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    color: #1d1b20;
-  }
-
-  tbody tr:hover {
-    background-color: rgba(231, 224, 236, 0.2);
-  }
-}
-
-.usuarios-table__actions {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboard-section__title {
+  font-family: Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #21005d;
+  margin: 0 0 1rem 0;
+}
+
+.dashboard-section__users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.dashboard-section__graficos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.dashboard-section__graficos-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dashboard-section__graficos-captions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.dashboard-section__caption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  color: #1d1b20;
+}
+
+.dashboard-section__caption-label {
+  font-weight: 600;
+  color: #21005d;
+}
+
+.dashboard-section__caption-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.dashboard-user {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 0.5rem;
 }
 
-.usuarios-table__action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem;
-  background: none;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.dashboard-user__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.dashboard-user__name {
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
   color: #21005d;
+}
 
-  &:hover {
-    background-color: rgba(33, 0, 93, 0.08);
-  }
+/* ===== CONTENIDO TABLA USUARIOS ===== */
+.usuarios-main__content{
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  overflow-y: visible;
+}
 
-  img,
-  svg {
-    display: block;
-  }
+/* ===== TABLA ===== */
+.usuarios-table{
+  width:100%;
+  border-collapse: collapse;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  font-family: Roboto, sans-serif;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* ===== HEADER TABLA ===== */
+.usuarios-table thead{
+  background:#EADDFF;
+}
+
+.usuarios-table th{
+  text-align:left;
+  padding:14px 16px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#21005D;
+}
+
+/* ===== CELDAS ===== */
+.usuarios-table td{
+  padding:14px 16px;
+  font-size:0.9rem;
+  color:#1d1b20;
+  border-top:1px solid #f3edf7;
+}
+
+/* ===== HOVER FILAS ===== */
+.usuarios-table tbody tr{
+  transition: background 0.15s ease;
+}
+
+.usuarios-table tbody tr:hover{
+  background:#faf8ff;
+}
+
+/* ===== PORCENTAJE ===== */
+.usuarios-table td:nth-child(4){
+  font-weight:600;
+  color:#21005D;
+}
+
+/* ===== ACCIONES ===== */
+.usuarios-table__actions{
+  display:flex;
+  gap:0.5rem;
+}
+
+/* botones acciones */
+.usuarios-table__action{
+  width:32px;
+  height:32px;
+  border-radius:8px;
+  border:none;
+  background:#F6F2FF;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition: all .15s ease;
+}
+
+/* hover botones */
+.usuarios-table__action:hover{
+  background:#EADDFF;
+  transform:translateY(-1px);
+}
+
+/* iconos */
+.usuarios-table__action img,
+.usuarios-table__action svg{
+  display:block;
+  color:#21005D;
 }
