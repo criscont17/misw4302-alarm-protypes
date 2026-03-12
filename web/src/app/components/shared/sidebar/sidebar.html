@@ -1,0 +1,22 @@
+<nav class="sidebar" role="navigation" aria-label="Menú principal">
+  <div class="sidebar__top">
+    <img src="assets/shared/hamburguesa.png" alt="" class="sidebar__icon" width="24" height="24" />
+    <img src="assets/shared/usuario.png" alt="Usuario" class="sidebar__icon" width="24" height="24" />
+    <img src="assets/shared/lapiz.png" alt="Editar" class="sidebar__icon" width="24" height="24" />
+  </div>
+  <ul class="sidebar__nav">
+    @for (item of items; track item.id) {
+      <li class="sidebar__item" [class.sidebar__item--active]="activeItemId() === item.id">
+        @if (activeItemId() === item.id) {
+          <img src="assets/shared/estrella-seleccionada.png" alt="" class="sidebar__item-icon" width="20" height="20" />
+        } @else {
+          <img src="assets/shared/estrella.png" alt="" class="sidebar__item-icon" width="20" height="20" />
+        }
+        <span class="sidebar__item-label">{{ item.label }}</span>
+      </li>
+    }
+  </ul>
+  <div class="sidebar__bottom">
+    <img src="assets/shared/salir.png" alt="Salir" class="sidebar__icon" width="24" height="24" />
+  </div>
+</nav>

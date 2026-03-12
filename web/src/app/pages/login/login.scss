@@ -1,0 +1,175 @@
+/* ===== Contenedor principal ===== */
+.login-page {
+  display: flex;
+  flex-direction: row;
+  height: 95vh; /* altura completa de la ventana */
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ===== Columna izquierda: Branding / Logo ===== */
+.login-page__branding {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #fff;
+  box-sizing: border-box;
+  overflow: hidden; /* evita scroll interno */
+}
+
+.login-page__branding-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/shared/background-web.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* Logo */
+.login-page__logo {
+  position: relative;
+  z-index: 1;
+  max-width: 100%; /* controla tamaño máximo */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===== Columna derecha: Formulario ===== */
+.login-page__form-section {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-sizing: border-box;
+  overflow-y: auto; /* permite scroll solo si es necesario */
+  padding: 2rem; /* agrega espacio interno sin romper layout */
+}
+
+/* Fondo difuminado */
+.login-page__form-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/shared/background-web.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* ===== Formulario ===== */
+.login-form {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Título */
+.login-form__title {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.25;
+  color: #21005d;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Campos de formulario */
+.login-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-form__label {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #49454f;
+}
+
+.login-form__input {
+  width: 100%;
+  height: 48px; /* ajustado para no exceder */
+  padding: 0 1rem;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: #1d1b20;
+  background-color: #e7e0ec;
+  border: 1px solid rgba(33, 0, 93, 0.3);
+  border-radius: 4px;
+  box-shadow: 0 4px 4px 0 #00000040;
+  box-sizing: border-box;
+}
+
+.login-form__input::placeholder {
+  color: #9b96a3;
+}
+
+.login-form__input:focus {
+  outline: none;
+  border-color: #21005d;
+}
+
+/* Botón */
+.login-form__button {
+  height: 48px;
+  padding: 0 1.5rem;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #21005d;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px 0 #00000040;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.login-form__button:hover {
+  opacity: 0.92;
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 1024px) {
+  .login-page {
+    flex-direction: column;
+    height: auto; /* deja que crezca en móviles */
+  }
+  .login-page__branding,
+  .login-page__form-section {
+    width: 100%;
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+  .login-page__logo {
+    max-width: 60%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    max-width: 90%;
+  }
+  .login-page__logo {
+    max-width: 70%;
+  }
+}

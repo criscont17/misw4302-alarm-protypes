@@ -1,0 +1,44 @@
+<div class="dashboard-layout">
+  <app-sidebar [activeItemId]="'dashboard'" />
+  <main class="dashboard-main">
+    <div class="dashboard-main__bg" role="presentation"></div>
+    <header class="dashboard-main__header">
+      <h1 class="dashboard-main__title">Dashboard general</h1>
+      <div class="dashboard-main__icons">
+        <img src="assets/shared/campana.png" alt="Notificaciones" width="24" height="24" />
+        <img src="assets/shared/engranaje.png" alt="Configuración" width="24" height="24" />
+      </div>
+    </header>
+    <div class="dashboard-main__content">
+      <section class="dashboard-section">
+        <h2 class="dashboard-section__title">Usuarios activos hoy</h2>
+        <div class="dashboard-section__users">
+          @for (u of usuariosActivos; track u.id) {
+            <div class="dashboard-user">
+              <img [src]="u.imagen" [alt]="u.nombre" class="dashboard-user__img" width="80" height="80" />
+              <span class="dashboard-user__name">{{ u.nombre }}</span>
+            </div>
+          }
+        </div>
+      </section>
+      <section class="dashboard-section">
+        <h2 class="dashboard-section__title">Graficos de analitica</h2>
+        <div class="dashboard-section__graficos">
+          <img src="assets/dashboard/graficos-analitica.png" alt="Gráficos de analítica" class="dashboard-section__graficos-img" />
+          <div class="dashboard-section__graficos-captions">
+            <p class="dashboard-section__caption">
+              <span class="dashboard-section__caption-label">Grafica 1</span>
+              % Cumplimiento general
+              <img src="assets/shared/estrella.png" alt="" class="dashboard-section__caption-icon" width="16" height="16" />
+            </p>
+            <p class="dashboard-section__caption">
+              <span class="dashboard-section__caption-label">Grafica 2</span>
+              % Alarmas fallidas
+              <img src="assets/shared/estrella.png" alt="" class="dashboard-section__caption-icon" width="16" height="16" />
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>

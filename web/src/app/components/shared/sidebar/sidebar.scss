@@ -1,0 +1,73 @@
+// Sidebar proporcional (~1/6), colores alineados con login (#E7E0EC, #21005D)
+
+.sidebar {
+  flex: 0 0 16.67%;
+  min-width: 6rem;
+  max-width: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  background-color: #e7e0ec;
+  color: #21005d;
+}
+
+.sidebar__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar__icon {
+  display: block;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.sidebar__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.sidebar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+
+  &--active {
+    background-color: rgba(33, 0, 93, 0.12);
+  }
+}
+
+.sidebar__item-icon {
+  display: block;
+  object-fit: contain;
+}
+
+.sidebar__item-label {
+  font-family: Roboto, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #21005d;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.sidebar__bottom {
+  margin-top: auto;
+  padding-top: 1rem;
+}
