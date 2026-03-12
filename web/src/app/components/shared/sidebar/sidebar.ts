@@ -1,4 +1,5 @@
 import { Component, input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 export interface SidebarItem {
   id: string;
@@ -7,7 +8,7 @@ export interface SidebarItem {
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })

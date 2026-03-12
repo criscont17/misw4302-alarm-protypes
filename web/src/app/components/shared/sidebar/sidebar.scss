@@ -1,36 +1,40 @@
-// Sidebar proporcional (~1/6), colores alineados con login (#E7E0EC, #21005D)
 
+/* ===== Sidebar ===== */
 .sidebar {
   flex: 0 0 16.67%;
-  min-width: 6rem;
-  max-width: 12rem;
+  min-width: 3rem;
+  max-width: 5rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   padding: 1rem 0.5rem;
-  background-color: #e7e0ec;
-  color: #21005d;
+
+  background-color: #EADDFF;
+  color: #21005D;
+
+  height: 100vh;
+
+  box-sizing: border-box; /* 👈 SOLUCIÓN */
 }
 
+/* Top icons */
 .sidebar__top {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
 }
 
-.sidebar__icon {
-  display: block;
-  object-fit: contain;
-  opacity: 0.9;
-}
-
+/* Lista de navegación */
 .sidebar__nav {
   list-style: none;
   margin: 0;
   padding: 0;
-  flex: 1;
+  flex: 1;               /* Ocupa todo el espacio entre top y bottom */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,6 +42,7 @@
   width: 100%;
 }
 
+/* Items */
 .sidebar__item {
   display: flex;
   flex-direction: column;
@@ -47,10 +52,6 @@
   padding: 0.5rem;
   border-radius: 4px;
   transition: background 0.2s ease;
-
-  &--active {
-    background-color: rgba(33, 0, 93, 0.12);
-  }
 }
 
 .sidebar__item-icon {
@@ -67,7 +68,8 @@
   line-height: 1.2;
 }
 
+/* Logout al final */
 .sidebar__bottom {
-  margin-top: auto;
-  padding-top: 1rem;
+  margin-top: auto; 
 }
+
