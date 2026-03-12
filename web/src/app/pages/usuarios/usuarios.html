@@ -1,0 +1,86 @@
+<div class="dashboard-layout">
+  <app-sidebar [activeItemId]="'usuarios'"></app-sidebar>
+
+  <main class="dashboard-main">
+    <!-- Fondos duplicados -->
+    <div class="dashboard-main__bg dashboard-main__bg-left" role="presentation"></div>
+    <div class="dashboard-main__bg dashboard-main__bg-right" role="presentation"></div>
+
+    <header class="dashboard-main__header">
+      <!-- Fila de iconos -->
+      <div class="dashboard-main__header-icons">
+        <img
+          src="assets/shared/usuario.png"
+          alt="Usuario"
+          class="header-icon-left"
+          width="25"
+          height="25"
+        />
+        <div class="header-icons-right">
+          <img
+            src="assets/shared/campana.png"
+            alt="Notificaciones"
+            class="header-icon-right"
+            width="40"
+            height="40"
+          />
+          <img
+            src="assets/shared/engranaje.png"
+            alt="Configuración"
+            class="header-icon-right"
+            width="40"
+            height="40"
+          />
+        </div>
+      </div>
+
+      <!-- Título debajo -->
+      <h1 class="dashboard-main__title">Usuarios</h1>
+    </header>
+    <div class="usuarios-main__content">
+      <table class="usuarios-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Estado</th>
+            <th>%Cumplimiento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (u of usuarios; track u.email) {
+            <tr>
+              <td>{{ u.nombre }}</td>
+              <td>{{ u.email }}</td>
+              <td>{{ u.estado }}</td>
+              <td>{{ u.porcentaje_cumplimiento }}%</td>
+              <td class="usuarios-table__actions">
+                <button type="button" class="usuarios-table__action" aria-label="Editar">
+                  <img src="assets/shared/lapiz.png" alt="" width="18" height="18" />
+                </button>
+                <button type="button" class="usuarios-table__action" aria-label="Eliminar">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"
+                    />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="dashboard-main__content"></div>
+  </main>
+</div>
