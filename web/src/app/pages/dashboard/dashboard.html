@@ -1,0 +1,101 @@
+<div class="dashboard-layout">
+  <app-sidebar [activeItemId]="'dashboard'"></app-sidebar>
+
+  <main class="dashboard-main">
+    <!-- Fondos duplicados -->
+    <div class="dashboard-main__bg dashboard-main__bg-left" role="presentation"></div>
+    <div class="dashboard-main__bg dashboard-main__bg-right" role="presentation"></div>
+
+    <header class="dashboard-main__header">
+      <!-- Fila de iconos -->
+      <div class="dashboard-main__header-icons">
+        <img
+          src="assets/shared/usuario.png"
+          alt="Usuario"
+          class="header-icon-left"
+          width="25"
+          height="25"
+        />
+        <div class="header-icons-right">
+          <img
+            src="assets/shared/campana.png"
+            alt="Notificaciones"
+            class="header-icon-right"
+            width="40"
+            height="40"
+          />
+          <img
+            src="assets/shared/engranaje.png"
+            alt="Configuración"
+            class="header-icon-right"
+            width="40"
+            height="40"
+          />
+        </div>
+      </div>
+
+      <!-- Título debajo -->
+      <h1 class="dashboard-main__title">Dashboard general</h1>
+    </header>
+
+    <div class="dashboard-main__content">
+      <section class="dashboard-section">
+        <h2 class="dashboard-section__title">Usuarios activos hoy</h2>
+        <div class="dashboard-section__users">
+          @for (u of usuariosActivos; track u.id) {
+            <div class="dashboard-user">
+              <img
+                [src]="u.imagen"
+                [alt]="u.nombre"
+                class="dashboard-user__img"
+                width="80"
+                height="80"
+              />
+              <span class="dashboard-user__name">{{ u.nombre }}</span>
+            </div>
+          }
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <h2 class="dashboard-section__title">Graficos de analitica</h2>
+
+        <div class="charts-container">
+          <!-- Tarjeta 1 -->
+          <div class="chart-wrapper">
+            <div class="chart-card">
+              <img src="assets/dashboard/grafico.png" class="chart-card__img" />
+            </div>
+
+            <div class="chart-card__footer">
+              <div class="chart-card__info">
+                <span class="chart-card__subtitle">% Cumplimiento general</span>
+              </div>
+
+              <button class="chart-card__button">
+                <img src="assets/shared/estrella.png" width="30" height="20" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="chart-wrapper">
+            <div class="chart-card">
+              <img src="assets/dashboard/grafico.png" class="chart-card__img" />
+            </div>
+
+            <div class="chart-card__footer">
+              <div class="chart-card__info">
+                <span class="chart-card__subtitle">% Alarmas fallidas</span>
+              </div>
+
+              <button class="chart-card__button">
+                <img src="assets/shared/estrella.png" width="30" height="20" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
